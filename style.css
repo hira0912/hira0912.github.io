@@ -26,17 +26,31 @@ hr {
 
 /* Profile */
 .profile {
-  text-align: center;
+  display: flex;
+  gap: 24px;
+  text-align: left;
 }
 
 .avatar {
   width: 88px;
   height: 88px;
-  margin: 0 auto 20px;
+  flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
   object-position: 65% 50%;
   display: block;
+}
+
+.profile-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .profile h1 {
@@ -51,7 +65,7 @@ hr {
 }
 
 .profile .title {
-  margin: 8px 0 20px;
+  margin: 8px 0 0;
   color: #555;
   font-size: 15px;
 }
@@ -59,8 +73,7 @@ hr {
 .profile .bio {
   color: #444;
   font-size: 14px;
-  max-width: 480px;
-  margin: 0 auto;
+  margin: 20px 0 0;
 }
 
 /* Sections */
@@ -118,20 +131,23 @@ section h2 {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 18px;
 }
 
 .link-list a {
-  color: #0366d6;
-  text-decoration: none;
-  font-size: 15px;
+  display: block;
   transition: opacity 0.15s ease;
 }
 
 .link-list a:hover {
-  opacity: 0.7;
-  text-decoration: underline;
+  opacity: 0.6;
+}
+
+.link-list img {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 /* Footer */
@@ -148,7 +164,26 @@ footer {
     padding: 40px 16px 32px;
   }
 
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0 auto;
+  }
+
+  .profile-heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   .profile h1 {
     font-size: 22px;
+  }
+
+  .link-list {
+    justify-content: center;
   }
 }
